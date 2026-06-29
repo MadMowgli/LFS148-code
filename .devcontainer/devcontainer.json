@@ -70,7 +70,14 @@
 					"editor.defaultFormatter": "ms-azuretools.vscode-containers"
 				},
 				"python.analysis.typeCheckingMode": "strict",
-				"python.analysis.autoImportCompletions": true
+				"python.analysis.autoImportCompletions": true,
+				// disable schema validation for otel collector config files, as there's no schema available on SchemaStore yet
+				"yaml.schemas": {
+					"":[
+						"**/otel-collector-config*.yaml",
+						"**/collector/**/*.yaml"
+					]
+				}
 			},
 			"extensions": [
 				"vscjava.vscode-java-pack",
